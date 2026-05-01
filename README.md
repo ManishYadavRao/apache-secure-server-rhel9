@@ -1,3 +1,4 @@
+
 # Apache Secure Web Server (RHEL 9)
 
 ## 🚀 Project Overview
@@ -106,3 +107,6 @@ Successfully deployed a secure Apache web server with HTTPS and implemented auto
 * SSL/HTTPS configuration
 * Automation using shell scripting
 * System security basics
+=======
+# apache-secure-server-rhel9
+>>>>>>> 31822f5f9576f2e10d4bf94415cfe104e24a6c15
