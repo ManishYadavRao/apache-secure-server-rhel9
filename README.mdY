@@ -1,0 +1,115 @@
+# Apache Secure Web Server (RHEL 9)
+
+## 🚀 Project Overview
+
+This project demonstrates the setup of a secure Apache web server on Red Hat Enterprise Linux 9 with HTTPS, automation, and basic system security.
+
+---
+
+## 🧰 Technologies Used
+
+* Apache (httpd)
+* OpenSSL (SSL Certificate)
+* Bash Scripting
+* Cron Jobs
+* Firewall (firewalld)
+* SSH Configuration
+
+---
+
+## 🔧 Features
+
+* Web server deployment using Apache
+* HTTPS enabled using SSL certificate
+* Automated backup using shell script
+* Cron job scheduling for daily backups
+* Firewall configuration for HTTP/HTTPS
+* Basic SSH security hardening
+
+---
+
+## ▶️ Setup Steps
+
+### 1. Install Apache
+
+dnf install httpd -y
+systemctl enable --now httpd
+
+### 2. Configure Firewall
+
+firewall-cmd --permanent --add-service=http
+firewall-cmd --permanent --add-service=https
+firewall-cmd --reload
+
+### 3. Create Website
+
+Path: /var/www/html/index.html
+
+### 4. Setup SSL (HTTPS)
+
+* Generated self-signed certificate using OpenSSL
+* Configured SSL in Apache (`ssl.conf`)
+* Restarted Apache
+
+### 5. Backup Script
+
+Script: /root/backuphtml.sh
+
+### 6. Cron Job
+
+0 2 * * * /root/backuphtml.sh
+
+---
+
+## 📸 Output
+
+### 🌐 Website Running (HTTPS)
+
+Website is accessible via:
+https://localhost
+
+### 📦 Backup Created
+
+Backup stored at:
+`/backuphtml/site_backup_YYYY-MM-DD.tar.gz`
+
+### ⏰ Cron Job
+
+0 2 * * * /root/backuphtml.sh
+
+### ⚙️ Apache Status
+
+active (running)
+
+---
+
+## 📸 Screenshots
+
+### Website (HTTPS Enabled)
+
+![Website](screenshots/website.png)
+
+### Backup File
+
+![Backup](screenshots/backup.png)
+
+### Cron Job
+
+![Cron](screenshots/cron.png)
+
+---
+
+## 🎯 Result
+
+Successfully deployed a secure Apache web server with HTTPS and implemented automated backup using cron jobs on RHEL 9.
+
+---
+
+## 📌 Learning Outcomes
+
+* Linux server setup and configuration
+* Web server deployment
+* SSL/HTTPS configuration
+* Automation using shell scripting
+* System security basics
+
